@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KX4J8Q");
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meridianbet Application</title>
+    <title>Meridianbet Mobile Application</title>
     <meta
       name="description"
       content="Download the Meridianbet mobile app and enjoy premium online betting and casino games wherever you are. Fast, safe and simple betting at your fingertips."
@@ -31,18 +45,24 @@
     />
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KX4J8Q"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header>
       <div class="logo">
         <img src="./img/logomb.png" alt="logo" />
       </div>
       <div class="btnLng">
         <div class="btn">
-          <a href="https://meridianbet.pe/es/registrate" target="_blank"
-            >Registro</a
-          >
-          <a href="https://meridianbet.pe/es/apuestas" target="_blank"
-            >Iniciar Sesión</a
-          >
+          <a class="join-now" href="#" target="_blank">Registro</a>
+          <a class="home" href="#" target="_blank">Iniciar Sesión</a>
         </div>
         <div class="lang-switcher">
           <a class="lang-rs" id="lang-link" href="#">
@@ -96,6 +116,7 @@
                   alt="androidIcon"
                 />
                 <a
+                  id="andriodAppBtn"
                   href="https://coupons.joker.co.rs/~android/pe/app-pe-release.apk"
                   >Download</a
                 >
@@ -111,6 +132,7 @@
                   alt="appleIcon"
                 />
                 <a
+                  id="iosAppBtn"
                   target="_blank"
                   href="https://itunes.apple.com/pe/app/id1241358851"
                   >Download</a
@@ -389,8 +411,26 @@
         </p>
       </div>
     </footer>
+    <script src="./jquery-1.12.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="mobile-detect.js"></script>
     <script src="js.js"></script>
+    <script>
+      var pathArray = document.URL.split("/");
+      var secondLevelLocation = pathArray[4];
+      var newURL = "https://meridianbet.pe/es/registrate" + secondLevelLocation;
+      var homeURL = "https://meridianbet.pe/es/apuestas" + secondLevelLocation;
+      console.log(newURL);
+      console.log(homeURL);
+      var RSurl = window.location.href;
+      var ENurl =
+        "https://meridianbet.pe/meridianbet-mobile-application/en/" +
+        secondLevelLocation;
+      $(".join-now").attr("href", newURL);
+      $(".home").attr("href", homeURL);
+
+      $(".lang-rs").attr("href", RSurl);
+      $(".lang-en").attr("href", ENurl);
+    </script>
   </body>
 </html>
